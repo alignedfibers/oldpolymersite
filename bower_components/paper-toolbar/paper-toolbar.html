@@ -112,22 +112,23 @@ be used as the label of the toolbar via `aria-labelledby`.
         -moz-box-sizing: border-box;
 
         /* size */
-        height: var(--paper-toolbar-height, 64px);
-
+        height: auto;//var(--paper-toolbar-height, 64px);
+        border:solid lightblue;
         background: var(--paper-toolbar-background, --primary-color);
         color: var(--paper-toolbar-color, --dark-theme-text-color);
-
+        padding:0px;
+        margin:0px;
         @apply(--paper-toolbar);
       }
 
       :host(.animate) {
         /* transition */
-        transition: var(--paper-toolbar-transition, height 0.18s ease-in);
+        //transition: var(--paper-toolbar-transition, height 0.18s ease-in);
       }
 
       :host(.medium-tall) {
-        height: calc(var(--paper-toolbar-height, 64px) * 2);
-        @apply(--paper-toolbar-medium);
+        //height: calc(var(--paper-toolbar-height, 64px) * 2);
+        //@apply(--paper-toolbar-medium);
       }
 
       :host(.tall) {
@@ -151,19 +152,19 @@ be used as the label of the toolbar via `aria-labelledby`.
 
       @media (max-width: 600px) {
         :host {
-          height: var(--paper-toolbar-sm-height, 56px);
+          //height: var(--paper-toolbar-sm-height, 56px);
         }
 
         :host(.medium-tall) {
-          height: calc(var(--paper-toolbar-sm-height, 56px) * 2);
+          //height: calc(var(--paper-toolbar-sm-height, 56px) * 2);
         }
 
         :host(.tall) {
-          height: calc(var(--paper-toolbar-sm-height, 56px) * 3);
+          //height: calc(var(--paper-toolbar-sm-height, 56px) * 3);
         }
 
         .toolbar-tools {
-          height: var(--paper-toolbar-sm-height, 56px);
+          //height: var(--paper-toolbar-sm-height, 56px);
         }
       }
 
@@ -173,7 +174,11 @@ be used as the label of the toolbar via `aria-labelledby`.
 
       /* middle bar */
       #middleBar {
+        display:block;
         position: absolute;
+        margin:0px;
+        paddig:0px;
+        border:solid orange;
         top: 0;
         right: 0;
         left: 0;
@@ -181,8 +186,8 @@ be used as the label of the toolbar via `aria-labelledby`.
 
       :host(.tall) #middleBar,
       :host(.medium-tall) #middleBar {
-        -webkit-transform: translateY(100%);
-        transform: translateY(100%);
+        //-webkit-transform: translateY(100%);
+        //transform: translateY(100%);
       }
 
       /* bottom bar */
@@ -273,11 +278,12 @@ be used as the label of the toolbar via `aria-labelledby`.
       }
     </style>
 
-    <div id="topBar" class$="toolbar-tools [[_computeBarExtraClasses(justify)]]">
+    <!--<div id="topBar" class$="toolbar-tools [[_computeBarExtraClasses(justify)]]">
       <content select=":not(.middle):not(.bottom)"></content>
-    </div>
+    </div>-->
 
-    <div id="middleBar" class$="toolbar-tools [[_computeBarExtraClasses(middleJustify)]]">
+<!--    <div id="middleBar" class$="toolbar-tools [[_computeBarExtraClasses(middleJustify)]]">-->
+    <div id="middleBar" class$="toolbar-tools">
       <content select=".middle"></content>
     </div>
 

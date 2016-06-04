@@ -1,188 +1,177 @@
 <!doctype html>
-<!--
-@license
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
 
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
+  <meta name="description" content="Cross Cut Property Services, Lawn and Property Care, Minneapolis Saint Paul Metroplitan Area Minnesota">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Polymer Starter Kit">
-  <title>Polymer Starter Kit</title>
+  <title>Cross Cut Property Services</title>
 
-  <!-- Place favicon.ico in the `app/` directory -->
-
-  <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#2E3AA1">
-
-  <!-- Web Application Manifest -->
+<!--//*####################################################
+Theme colors and Icons for mobile and desktop platforms
+################################################*//-->
+  <meta name="theme-color" content="#285728">
   <link rel="manifest" href="manifest.json">
-
-  <!-- Tile color for Win8 -->
-  <meta name="msapplication-TileColor" content="#3372DF">
-
-  <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="PSK">
-  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
-
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
-  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
-
-  <!-- Tile icon for Win8 (144x144) -->
-  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-
-  <!-- build:css styles/main.css -->
+  <meta name="msapplication-TileColor" content="#285728"><!-- Tile color for Win8 -->
+  <meta name="mobile-web-app-capable" content="yes"><!-- Add to homescreen for Chrome on Android -->
+  <meta name="application-name" content="Cross Cut Property">
+  <link rel="icon" sizes="192x192" href="images/touch/cc-chrome-touch-icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes"><!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="orange">
+  <meta name="apple-mobile-web-app-title" content="Cross Cut Property">
+  <link rel="apple-touch-icon" href="images/touch/cc-apple-touch-icon.png">
+  <meta name="msapplication-TileImage" content="images/touch/cc-ms-touch-icon-144x144.png"><!-- Tile icon for Win8 (144x144) -->
+<!--//*####################################################
+Load all of our style sheets, keep boot strap first
+################################################*//--> 
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'/>
   <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild-->
-
-  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+<!--//*####################################################
+Load all of our javascript, keep webcomponents first for polyfill
+################################################*//--> 
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <!-- endbuild -->
-
-  <!-- Because this project uses vulcanize this should be your only html import
-       in this file. All other imports should go in elements.html -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--//*####################################################
+REQUIRE ONCE --- This imports all of the elements in use.
+NOTE: Client viewer caches html imports and will not refresh them
+Force refresh on all clients or reversion file names when making 
+changes to the code or markup in the imported files to ensure
+clients are not running versions cached before changes made.
+################################################*//-->
   <link rel="import" href="elements/elements.html">
-
-  <!-- For shared styles, shared-styles.html import in elements.html -->
+<!--//*####################################################
+Share styles across scopes
+################################################*//--> 
   <style is="custom-style" include="shared-styles"></style>
 </head>
-
-<body unresolved>
-  <!-- build:remove -->
-  <span id="browser-sync-binding"></span>
-  <!-- endbuild -->
+<body unresolved id="mybody" style="">
+  <span id="browser-sync-binding">
+  <!--//*####################################################
+      browser-sync handles live reloads and refresh of all imports 
+      - disabled in this production version for security reasons
+      use a serverside preprocessor to version name import directory
+      to update the href: for all imports - simple,secure, nothing fancy    
+    ################################################*//-->
+  </span>
 
   <template is="dom-bind" id="app">
 
-    <paper-drawer-panel id="paperDrawerPanel">
-      <!-- Drawer Scroll Header Panel -->
-      <paper-scroll-header-panel drawer fixed>
+        <!-- Navigation and Title -->
+        <div id="companyname" style="">Cross Cut Property Services Inc.</div>
+        <cc-title-bar unitId="crosscutproperty/2016" id="title-bar">
+            <!--###############################################################
+                Declaration and Attention Getter / Anouncement 
+                Your graphic and primary customer view items load here
+            ###################################################################-->
+        </cc-title-bar>
+        <div id="nav-placeholder">
+        <cc-navigator attr-for-selected="data-route" id="navigator" selected="[[route]]" style="z-index:110 !important;">
+                            <ul class="main-nav"> 
+                                <li class="top-level-link">
+                                  <a data-route="home" href="{{baseUrl}}home"><span>Home</span></a>      
+                                </li>
+                                <li class="top-level-link">
+                                  <a data-route="takeaction" href="{{baseUrl}}takeaction"><span>Take Action</span></a>      
+                                </li>
+                                <li class="top-level-link">
+                                  <a data-route="coveragearea" href="{{baseUrl}}coveragearea"><span>Coverage Area</span></a>      
+                                </li>
+                                <li class="top-level-link">
+                                  <a data-route="services" href="{{baseUrl}}services"><span>Our Services</span></a>      
+                                </li>
 
-        <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawerToolbar">
-          <span class="menu-name">Menu</span>
-        </paper-toolbar>
+                                <li class="top-level-link">
+                                  <a data-route="equipment" href="{{baseUrl}}equipment"><span>Equipment</span></a>     
+                                </li>
 
-        <!-- Drawer Content -->
-        <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
-          <a data-route="home" href="{{baseUrl}}">
-            <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
-          </a>
+                            </ul>
 
-          <a data-route="users" href="{{baseUrl}}users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
-          </a>
-
-          <a data-route="contact" href="{{baseUrl}}contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
-        </paper-menu>
-      </paper-scroll-header-panel>
-
-      <!-- Main Area -->
-      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
-        <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall">
-          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-
-          <span class="space"></span>
-
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
-
-          <!-- Application name -->
-          <div class="middle middle-container">
-            <div class="app-name">Polymer Starter Kit</div>
-          </div>
-
-          <!-- Application sub title -->
-          <div class="bottom bottom-container">
-            <div class="bottom-title">The future of the web today</div>
-          </div>
-        </paper-toolbar>
+        </cc-navigator>
+        </div>
 
         <!-- Main Content -->
-        <div class="content">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
-            <section data-route="home" tabindex="-1">
+        <div class="content" id="page-container" style="">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}" style="z-index:70 !important; margin:0px !important; padding:0px !important;height:auto !important;">
+            <section data-route="home" tabindex="-1" class="content-page" style="margin:0px;padding:0px;">
               <paper-material elevation="1">
-                <my-greeting></my-greeting>
-
-                <p class="subhead">You now have:</p>
-                <my-list></my-list>
-
-                <p>Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
+                <h1 class="page-title" tabindex="-1">Home</h1>
+                      <p>
+                        Cross Cut Property Services provides professional lawn, shrub, garden and property maintenance as well as snow removal. 
+                        Owned by Rick Zobel who has been in the industry since the early '90s this company is built on sensible solutions and 
+                        their successful execution. As Rick is very industrious and knowledgeable in lawn maintenance and it's management he is 
+                        able to simplify tasks and provide value in structuring a well defined plan for single family homes, multi-facility commercial 
+                        properties, residential associations and government properties. Cross Cut Properties maintains equipment for large brush cut 
+                        and wild growth maintenance as well as professional mowing, trimming and garden maintenance.
+                      </p>
               </paper-material>
+            </section>
 
+            <section data-route="takeaction" tabindex="-1" class="content-page" style="margin:0px;padding:0px;">
               <paper-material elevation="1">
-                <p>This is another card.</p>
-              </paper-material>
-
-              <paper-material elevation="1">
-                <h2 id="license">License</h2>
-                <p>Everything in this repo is BSD style license unless otherwise specified.</p>
-                <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-                <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+                <h1 class="page-title" tabindex="-1">Take Action</h1>
+                <p><h3></h3>To strengthen outstanding service, client relationships, customer satisfaction and facilitate exceptional experience the following action tools have been
+                   provided for our clients, and professional network as well as ourselves to manage and organize our mowing routes, connect with others, and promote.
+                </p>
                 <ul>
-                <li>Redistributions of source code must retain the above copyright
-                notice, this list of conditions and the following disclaimer.</li>
-                <li>Redistributions in binary form must reproduce the above
-                copyright notice, this list of conditions and the following disclaimer
-                in the documentation and/or other materials provided with the
-                distribution.</li>
-                <li>Neither the name of Google Inc. nor the names of its
-                contributors may be used to endorse or promote products derived from
-                this software without specific prior written permission.</li>
+                  <li><a href="{{baseUrl}}underconstruction">Start A Quote</a></li>
+                  <li><a href="{{baseUrl}}underconstruction">Write A Review</a></li>
+                  <li><a href="{{baseUrl}}underconstruction">Get Social + Connect</a></li>
+                  <li><a href="{{baseUrl}}underconstruction">Add to Contact List</a></li>
+                  <li><a href="{{baseUrl}}underconstruction">Provide Professional Endorsment</a></li>
                 </ul>
-                <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
               </paper-material>
+
             </section>
 
-            <section data-route="users" tabindex="-1">
+            <section data-route="coveragearea" tabindex="-1" class="content-page" style="margin:0px;padding:0px;">
               <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Users</h1>
-                <p>This is the users section</p>
-                <a href$="{{baseUrl}}users/Addy">Addy</a><br>
-                <a href$="{{baseUrl}}users/Rob">Rob</a><br>
-                <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
-                <a href$="{{baseUrl}}users/Sam">Sam</a>
+                <h1 class="page-title" tabindex="-1">Coverage Area</h1>
+                      <p>We service the Twincities, Metropolitan and Extended Areas completing weekly routes throughout Minneapolis, Saint Paul, NE and NW suburbs. 
+                         Our service area is increasing, please call Rick Zobel at 763-234-7869 or complete our <a href="{{baseUrl}}underconstruction">start quote process here </a> 
+                         to go over details and find a service schedule. We follow up on all quote requests submitted via online tool and are happy to take your call. 
+                      </p>
               </paper-material>
             </section>
 
-            <section data-route="user-info" tabindex="-1">
-              <paper-material elevation="-1">
-                <h1 class="page-title" tabindex="-1">User: {{params.name}}</h1>
-                <div>This is {{params.name}}'s section</div>
-              </paper-material>
-            </section>
-
-            <section data-route="contact" tabindex="-1">
+            <section data-route="equipment" tabindex="-1" class="content-page">
               <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Contact</h1>
-                <p>This is the contact section</p>
+                  <h1 class="page-title" tabindex="-1">Equipment</h1>
+                        <p>Outstanding and well maintained equipment is key to a job done right. One of our jobs is to ensure all Tools and Equipment are in optimum condition.
+                           We use best in class zero turn lawn mowers, weedwhips, leaf blowers, bagging and collection aparatus. We take pride in our tools employing equipment 
+                           from makers such as: Toro, Gravely, Husqavarna,
+                        </p>
+              </paper-material>
+            </section>
+
+            <section data-route="services" tabindex="-1" class="content-page">
+              <paper-material elevation="1">
+                <h1 class="page-title" tabindex="-1">Our Services</h1>
+                <ul>
+                  <li><a href="{{baseUrl}}underconstruction">Seasonal Cleanup, Yard Wast Collection and Disposal</a></li>
+                  <li><a href="{{baseUrl}}underconstruction">Herbicide / Fertilizer Application and Manual Weed Control</a></li>
+                  <li><a href="{{baseUrl}}underconstruction">Weekly Lawn Maintenance, Trimming and Traffic Area Clearance </a></li>
+                  <li><a href="{{baseUrl}}underconstruction">Open Lot and Wild Growth Maintenance</a></li>
+                </ul>
+              </paper-material>
+            </section>
+            <section data-route="underconstruction" tabindex="-1" class="content-page" style="margin:0px;padding:0px;">
+              <paper-material elevation="1">
+                <div style="float:left;max-width:600px;">
+                  <h1 class="page-title" tabindex="-1">Under Construction</h1>
+                  <p>Thank you for visiting, this content is not yet ready or available at this time.
+                     Please stop back near the First of May 2016 to check on improvements.</p>   
+                </div>
+                <img src="images/misc/longgrass.jpg" style="float:right;"></img>
+                <div style="display:block; clear:both"></div>
               </paper-material>
             </section>
           </iron-pages>
         </div>
-      </paper-scroll-header-panel>
-    </paper-drawer-panel>
-
+    <div id="outro"><span id="thankyou">Thank you for visiting & hope to see you soon. Call Rick Zobel, 763-234-7869 to learn more</span></div>
     <paper-toast id="toast">
       <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
     </paper-toast>
@@ -206,9 +195,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     -->
 
   </template>
-
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-76417542-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
   <!-- endbuild-->
 </body>
 

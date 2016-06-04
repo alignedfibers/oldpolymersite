@@ -35,5 +35,11 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "generator-polymer": "^1.2.10",
+    "karma": "^0.13.22",
+    "vulcanize": "^1.14.8",
+    "yo": "^1.7.0"
   }
 }

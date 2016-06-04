@@ -219,14 +219,15 @@ gulp.task('serve', ['styles'], function() {
     port: 5000,
     notify: false,
     logPrefix: 'PSK',
-    snippetOptions: {
+ghostMode: false,
+    /*snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
         fn: function(snippet) {
           return snippet;
         }
       }
-    },
+    },*/
     // Run as an https by uncommenting 'https: true'
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
@@ -237,10 +238,10 @@ gulp.task('serve', ['styles'], function() {
     }
   });
 
-  gulp.watch(['app/**/*.html', '!app/bower_components/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], reload);
-  gulp.watch(['app/images/**/*'], reload);
+  //gulp.watch(['app/**/*.html', '!app/bower_components/**/*.html'], reload);
+  //gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
+  //gulp.watch(['app/scripts/**/*.js'], reload);
+  //gulp.watch(['app/images/**/*'], reload);
 });
 
 // Build and serve the output from the dist build
@@ -249,14 +250,15 @@ gulp.task('serve:dist', ['default'], function() {
     port: 5001,
     notify: false,
     logPrefix: 'PSK',
-    snippetOptions: {
+ghostMode: false,
+    /*snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
         fn: function(snippet) {
           return snippet;
         }
       }
-    },
+    },*/
     // Run as an https by uncommenting 'https: true'
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
